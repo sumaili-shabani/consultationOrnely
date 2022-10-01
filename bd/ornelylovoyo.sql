@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 30 sep. 2022 à 16:54
+-- Généré le : sam. 01 oct. 2022 à 15:50
 -- Version du serveur : 10.4.22-MariaDB
 -- Version de PHP : 7.4.27
 
@@ -67,19 +67,29 @@ CREATE TABLE `ch_messages` (
 INSERT INTO `ch_messages` (`id`, `type`, `from_id`, `to_id`, `body`, `attachment`, `seen`, `created_at`, `updated_at`) VALUES
 (1675784938, 'user', 3, 1, 'ok', NULL, 1, '2022-09-11 20:11:38', '2022-09-11 20:16:11'),
 (1685163841, 'user', 3, 1, 'oui salut ni sawa?', NULL, 1, '2022-09-11 20:00:46', '2022-09-11 20:00:47'),
+(1707041303, 'user', 8, 6, 'Bonjour!', NULL, 1, '2022-10-01 11:25:24', '2022-10-01 11:26:31'),
+(1710683619, 'user', 6, 8, 'ce comment?', NULL, 1, '2022-10-01 11:27:40', '2022-10-01 11:27:42'),
 (1712287775, 'user', 1, 3, 'salut', NULL, 1, '2022-09-11 19:51:43', '2022-09-11 20:00:36'),
 (1743141795, 'user', 1, 2, 'Sawa boss?', NULL, 1, '2022-09-11 18:08:19', '2022-09-29 13:54:52'),
 (1783488660, 'user', 4, 3, 'salut boss', NULL, 0, '2022-09-11 20:18:19', '2022-09-11 20:18:19'),
+(1797483449, 'user', 2, 8, 'ye oyo!', '{\"new_name\":\"46108cee-85b9-49c6-94c0-e8a993194b14.jpg\",\"old_name\":\"images00.jpg\"}', 1, '2022-10-01 11:22:39', '2022-10-01 11:22:42'),
 (1820781190, 'user', 1, 2, 'jolie photo', NULL, 1, '2022-09-11 20:10:51', '2022-09-29 13:54:52'),
+(1862302837, 'user', 8, 2, 'ndiyo sawa', NULL, 1, '2022-10-01 11:21:34', '2022-10-01 11:21:36'),
 (1882441510, 'user', 1, 2, 'ni sawa?', '{\"new_name\":\"bb796174-4e7a-4a81-821b-e3488b37e7df.jpg\",\"old_name\":\"305839085_173125481919319_6454629331636632560_n.jpg\"}', 1, '2022-09-11 18:07:37', '2022-09-29 13:54:52'),
 (1908170472, 'user', 1, 2, 'Bonsoir', NULL, 1, '2022-09-11 18:07:12', '2022-09-29 13:54:52'),
 (1914155940, 'user', 3, 1, '', '{\"new_name\":\"9e67ba16-9ee8-4006-93da-28fbd6c132b9.jpg\",\"old_name\":\"182839677.jpg\"}', 1, '2022-09-11 20:09:30', '2022-09-11 20:16:11'),
 (1942117245, 'user', 2, 4, 'salut', NULL, 0, '2022-09-29 13:55:29', '2022-09-29 13:55:29'),
 (2080843018, 'user', 3, 1, 'sawa!', NULL, 1, '2022-09-11 20:03:39', '2022-09-11 20:03:40'),
+(2138092363, 'user', 9, 8, 'ok attends j&#039;appelle d&eacute;j&agrave; le docteur', NULL, 1, '2022-10-01 11:40:26', '2022-10-01 11:40:29'),
 (2250662457, 'user', 1, 2, 'Amani festival', '{\"new_name\":\"440ad882-505f-4fef-8b99-6a0ff93045b3.jpg\",\"old_name\":\"43ca772c4b6ce3aa5c1988d96ecaac71.jpg\"}', 1, '2022-09-11 18:08:48', '2022-09-29 13:54:52'),
 (2255061910, 'user', 1, 3, 'boss', NULL, 1, '2022-09-11 19:58:05', '2022-09-11 20:00:36'),
 (2308276060, 'user', 1, 3, 'ndiyo ni sawa!', '{\"new_name\":\"0f3a112f-a8b1-4f72-8258-ff72693683d3.jpg\",\"old_name\":\"510608700.jpg\"}', 1, '2022-09-11 20:01:26', '2022-09-11 20:01:28'),
-(2476128995, 'user', 2, 3, 'Bonjour', NULL, 0, '2022-09-29 13:55:44', '2022-09-29 13:55:44');
+(2367573893, 'user', 2, 8, 'oui bonjour! ni sawa?', NULL, 1, '2022-10-01 11:21:17', '2022-10-01 11:21:19'),
+(2369746477, 'user', 8, 9, 'bonjour je suis d&eacute;j&agrave; prete', NULL, 1, '2022-10-01 11:39:18', '2022-10-01 11:40:08'),
+(2476128995, 'user', 2, 3, 'Bonjour', NULL, 0, '2022-09-29 13:55:44', '2022-09-29 13:55:44'),
+(2528806224, 'user', 8, 6, 'https://meet.jit.si/brKxdYDURKPKUEZj2LVLHWP25DAABb', NULL, 1, '2022-10-01 11:28:11', '2022-10-01 11:28:14'),
+(2571443945, 'user', 8, 2, 'sawa', NULL, 1, '2022-10-01 11:22:59', '2022-10-01 11:23:01'),
+(2583840859, 'user', 8, 2, 'bonjour boss', NULL, 1, '2022-10-01 11:20:21', '2022-10-01 11:20:48');
 
 -- --------------------------------------------------------
 
@@ -198,7 +208,10 @@ INSERT INTO `events` (`id`, `title`, `url`, `start`, `end`, `user_id`, `created_
 (1, 'Conférence 1', 'https://meet.jit.si/victory', '2022-09-23', '2022-09-23', 1, '2022-09-29 17:44:45', '2022-09-29 17:44:45'),
 (2, 'Conférence 2', 'https://meet.jit.si/victory', '2022-09-25', '2022-09-25', 1, '2022-09-29 17:45:22', '2022-09-29 17:45:22'),
 (3, 'Conférence Consultation', 'https://meet.jit.si/dreamofdrc', '2022-09-30', '2022-09-30', 5, '2022-09-29 17:46:00', '2022-09-29 17:46:51'),
-(4, 'Conférence consultation', 'https://meet.jit.si/dreamofdrc', '2022-09-30', '2022-09-30', 1, '2022-09-29 17:47:31', '2022-09-29 17:47:31');
+(4, 'Conférence consultation', 'https://meet.jit.si/dreamofdrc', '2022-09-30', '2022-09-30', 1, '2022-09-29 17:47:31', '2022-09-29 17:47:31'),
+(5, 'Consultation prénatale', 'https://meet.jit.si/yF89g4gyNxZv2Fdo7q6sRMUQVdrf0C', '2022-10-01', '2022-10-01', 8, '2022-10-01 11:13:51', '2022-10-01 11:13:51'),
+(6, 'consultation prénatale', 'https://meet.jit.si/yF89g4gyNxZv2Fdo7q6sRMUQVdrf0C', '2022-10-01', '2022-10-01', 9, '2022-10-01 11:35:18', '2022-10-01 11:35:18'),
+(7, 'consultation prénatale', 'https://meet.jit.si/yF89g4gyNxZv2Fdo7q6sRMUQVdrf0C', '2022-10-01', '2022-10-01', 6, '2022-10-01 11:38:19', '2022-10-01 11:38:19');
 
 -- --------------------------------------------------------
 
@@ -407,6 +420,7 @@ CREATE TABLE `permission_role` (
 
 INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (1, 1),
+(1, 2),
 (1, 3),
 (1, 4),
 (2, 1),
@@ -434,18 +448,23 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (24, 1),
 (25, 1),
 (31, 1),
+(31, 2),
 (31, 3),
 (31, 4),
 (32, 1),
+(32, 2),
 (32, 3),
 (32, 4),
 (33, 1),
+(33, 2),
 (33, 3),
 (33, 4),
 (34, 1),
+(34, 2),
 (34, 3),
 (34, 4),
 (35, 1),
+(35, 2),
 (35, 3),
 (35, 4);
 
@@ -469,7 +488,7 @@ CREATE TABLE `roles` (
 
 INSERT INTO `roles` (`id`, `name`, `display_name`, `created_at`, `updated_at`) VALUES
 (1, 'admin', 'Administrator', '2022-09-11 17:35:57', '2022-09-11 17:35:57'),
-(2, 'user', 'Normal User', '2022-09-11 17:35:57', '2022-09-11 17:35:57'),
+(2, 'docteur assistant', 'Docteur assistant', '2022-09-11 17:35:57', '2022-10-01 11:32:33'),
 (3, 'Malade', 'Malade', '2022-09-29 16:53:55', '2022-09-29 16:53:55'),
 (4, 'Medecin/infirmier', 'docteur', '2022-09-29 16:54:24', '2022-09-29 16:54:24');
 
@@ -552,12 +571,14 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `role_id`, `name`, `email`, `avatar`, `email_verified_at`, `password`, `remember_token`, `settings`, `created_at`, `updated_at`, `active_status`, `dark_mode`, `messenger_color`) VALUES
 (1, 1, 'Roger Sumaili', 'admin@admin.com', 'users\\September2022\\GMnAyj379I5jo8Bpg43g.jpg', NULL, '$2y$10$wS5AEG9s5u3laEL1ZfHu.O7U.28aUZ44Xnpqw5TT84BLpYo04zz4O', NULL, '{\"locale\":\"en\"}', '2022-09-11 17:37:31', '2022-09-11 20:16:38', 0, 0, '#2180f3'),
-(2, 1, 'Admin', 'admin@gmail.com', 'users/default.png', NULL, '$2y$10$1Y3nD4vnR9/QIn5qnJxldu1xvD8XHGFU1yQjO1rVawK2poz0Z2Try', NULL, '{\"locale\":\"en\"}', '2022-09-11 17:41:08', '2022-09-11 17:41:08', 0, 0, '#2180f3'),
+(2, 1, 'Admin roger', 'admin@gmail.com', 'users/default.png', NULL, '$2y$10$1Y3nD4vnR9/QIn5qnJxldu1xvD8XHGFU1yQjO1rVawK2poz0Z2Try', NULL, '{\"locale\":\"en\"}', '2022-09-11 17:41:08', '2022-10-01 11:20:39', 1, 0, '#2180f3'),
 (3, 3, 'cubaka mulume alpha', 'cubakamulumealpha@gmail.com', 'users/default.png', NULL, '$2y$10$KgvTQiysZIZkjaMpIy/QCepBq8Yv/ToYo1KgvZ7pnYTPeBXzEwEae', NULL, '{\"locale\":\"en\"}', '2022-09-11 19:05:57', '2022-09-29 16:56:03', 1, 0, '#2180f3'),
 (4, 3, 'Jérémie  mila', 'jeremie@gmail.com', 'users/default.png', NULL, '$2y$10$0VSiLkMIRpHXwL.Gvfrwy.TKq7/127Z.sJqY/e7QvcaGFlo2ZdKjm', NULL, '{\"locale\":\"en\"}', '2022-09-11 20:17:38', '2022-09-29 16:54:59', 0, 0, '#2180f3'),
 (5, 4, 'pionde bin sefu', 'pionde@gmail.com', 'users/default.png', NULL, '$2y$10$n.UqF0/mko9fFShM/TQ1l.4whBxxqxI5XJg9cS.OMj2.LIiNd963C', NULL, '{\"locale\":\"en\"}', '2022-09-29 16:59:13', '2022-09-29 16:59:13', 0, 0, '#2180f3'),
-(6, 4, 'kasumba kipindula', 'kasumba@gmail.com', 'users\\September2022\\W1yhXq5RCUClHpHId7Iz.JPG', NULL, '$2y$10$Hpm4aG6E2GzYlHqKHRUGle22Zfep7/CL6i05aGRWSdw5Kbd.Ueofq', NULL, '{\"locale\":\"en\"}', '2022-09-29 17:00:00', '2022-09-30 11:53:16', 0, 0, '#2180f3'),
-(7, 3, 'Yuma kayanda', 'yuma@gmail.com', 'users\\September2022\\7hgGy18Xi7eCCKo4vVFr.JPG', NULL, '$2y$10$5SMmuxC.FqjIY9vfs0h/we9.fJap6KoifT/56O8KpRorRZqeS9wzq', NULL, '{\"locale\":\"en\"}', '2022-09-29 17:00:53', '2022-09-30 11:52:58', 0, 0, '#2180f3');
+(6, 4, 'kasumba kipindula', 'kasumba@gmail.com', 'users\\September2022\\W1yhXq5RCUClHpHId7Iz.JPG', NULL, '$2y$10$Hpm4aG6E2GzYlHqKHRUGle22Zfep7/CL6i05aGRWSdw5Kbd.Ueofq', NULL, '{\"locale\":\"en\"}', '2022-09-29 17:00:00', '2022-10-01 11:31:01', 0, 1, '#2180f3'),
+(7, 3, 'Yuma kayanda', 'yuma@gmail.com', 'users\\September2022\\7hgGy18Xi7eCCKo4vVFr.JPG', NULL, '$2y$10$5SMmuxC.FqjIY9vfs0h/we9.fJap6KoifT/56O8KpRorRZqeS9wzq', NULL, '{\"locale\":\"en\"}', '2022-09-29 17:00:53', '2022-09-30 11:52:58', 0, 0, '#2180f3'),
+(8, 3, 'ornerly lovoyo', 'orny@gmail.com', 'users\\October2022\\jrSCKTzFCFFzusvJWCkK.jpg', NULL, '$2y$10$D/nMsuzOCd26/M39IlrBJuXTl//rIRQezxFSOByZFvkhYKlpveIPG', NULL, '{\"locale\":\"en\"}', '2022-10-01 11:10:24', '2022-10-01 11:44:37', 0, 0, '#2180f3'),
+(9, 2, 'albert tambwe', 'tambwe@gmail.com', 'users\\October2022\\NfzlIWLntCynx5EnIzUV.JPG', NULL, '$2y$10$FMpnHuVdqjmWzf3uvz3DaOqILb30kaNw8mjub1gFfZidYBs1rs5vi', NULL, '{\"locale\":\"en\"}', '2022-10-01 11:33:20', '2022-10-01 11:39:31', 1, 0, '#2180f3');
 
 -- --------------------------------------------------------
 
@@ -725,7 +746,7 @@ ALTER TABLE `data_types`
 -- AUTO_INCREMENT pour la table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `failed_jobs`
@@ -779,7 +800,7 @@ ALTER TABLE `translations`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Contraintes pour les tables déchargées

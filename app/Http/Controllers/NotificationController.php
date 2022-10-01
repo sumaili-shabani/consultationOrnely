@@ -14,7 +14,7 @@ class NotificationController extends Controller
     {
         $id = auth()->user()->id;
         $data = DB::table("events")
-        ->where('events.user_id','=', 1)
+        ->where('events.user_id','=', $id)
         ->get();
         
         // echo("id:".$id);
