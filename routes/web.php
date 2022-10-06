@@ -42,3 +42,5 @@ Route::get('/notification/{id}', [NotificationController::class, 'getSigleNotifi
 
 Route::get('/createmeeting', [NotificationController::class, 'createmeeting']);
 Route::get('/doctors', [NotificationController::class, 'getListdoctors']);
+Route::get('/pdfData', [NotificationController::class, 'pdfData']);
+Route::get('/pdf_list/{role_id}', [NotificationController::class, 'printData']);
