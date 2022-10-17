@@ -41,6 +41,11 @@ Route::get('/notification', [NotificationController::class, 'index']);
 Route::get('/notification/{id}', [NotificationController::class, 'getSigleNotification']);
 
 Route::get('/createmeeting', [NotificationController::class, 'createmeeting']);
-Route::get('/doctors', [NotificationController::class, 'getListdoctors']);
+Route::get('/formateur', [NotificationController::class, 'getListdoctors']);
 Route::get('/pdfData', [NotificationController::class, 'pdfData']);
 Route::get('/pdf_list/{role_id}', [NotificationController::class, 'printData']);
+
+//cours
+Route::get('/courses', [NotificationController::class, 'getCourse']);
+Route::get('/course/{id}', [NotificationController::class, 'getSigleCourse']);
+Route::get('/searchCourse', [NotificationController::class, 'searchCourse'])->name('course.search');

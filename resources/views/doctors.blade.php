@@ -19,7 +19,7 @@
 		        <div class="col-md-8">
 		            <div class="card">
 		            	
-		                <div class="card-header">Liste des medecins </div>
+		                <div class="card-header">Liste des Formateur </div>
 		               
 		                <div class="card-body">
 
@@ -35,10 +35,10 @@
 											    <div class="thumbnail">
 											      <img 
 											      src="{{ Voyager::image($row->avatar) }}" style="height: 150px; width: 150px;" alt="...">
-											      <div class="caption">
+											      <div class="caption text-center">
 											        <h3>{{$row->name}}</h3>
 											        <p>{{$row->email}}</p>
-											        <p class="text-center"><a href="javascript:void(0);" class="btn btn-primary" role="button"><i class="voyager-eye"></i> Détail</a></p>
+											       
 											      </div>
 											    </div>
 											  </div>

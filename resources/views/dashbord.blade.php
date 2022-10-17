@@ -1,3 +1,4 @@
+
 @extends('voyager::master')
 
 @section('content')
@@ -40,9 +41,9 @@
 			                						</div>
 			                						<div class="col-md-12 text-center">
 			                							<h3>
-			                								{{$nbrDr}}
+			                								{{$nbrformateur}}
 			                							</h3>
-			                							<span>Docteurs</span>
+			                							<span>Formateur</span>
 			                						</div>
 			                					</div>
 			                					
@@ -66,9 +67,9 @@
 			                						</div>
 			                						<div class="col-md-12 text-center">
 			                							<h3>
-			                								{{$nbrMalade}}
+			                								{{$nbrApprenant}}
 			                							</h3>
-			                							<span>Malades</span>
+			                							<span>Apprenants</span>
 			                						</div>
 			                					</div>
 			                					
@@ -84,7 +85,7 @@
 			                					<div class="col-md-12">
 
 			                						<div class="col-md-12 text-center">
-			                							<a href="/pdf_list/2">
+			                							<a href="/pdf_list/1">
 				                							<h1>
 				                								<i class="voyager-people"></i>
 				                							</h1>
@@ -92,9 +93,9 @@
 			                						</div>
 			                						<div class="col-md-12 text-center">
 			                							<h3>
-			                								{{$nbrAssDr}}
+			                								{{$nbrAdmin}}
 			                							</h3>
-			                							<span>Ass Dr</span>
+			                							<span>Administrateur</span>
 			                						</div>
 			                					</div>
 			                					
@@ -106,7 +107,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12 text-center">
-										
+										<div id="chartContainer" style="height: 300px; width: 100%;"></div>
 									</div>
 								</div>
 		                	</div>
@@ -125,4 +126,30 @@
 
 
 	</div>
+
+
+	<script type="text/javascript">
+
+		window.onload = function () {
+			var chart = new CanvasJS.Chart("chartContainer", {
+				title:{
+					text: ""              
+				},
+				data: [              
+				{
+					// Change type to "doughnut", "line", "splineArea", etc.
+					type: "column",
+					dataPoints: [
+						{ label: "formateurs",  y: 2  },
+						{ label: "admins", y: 2  },
+						{ label: "apprenants", y: 4  },
+						
+					]
+				}
+				]
+			});
+			chart.render();
+		}
+	</script>
 @stop
+

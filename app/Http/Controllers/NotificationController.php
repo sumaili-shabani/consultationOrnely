@@ -50,14 +50,14 @@ class NotificationController extends Controller
 
     function pdfData()
     {
-        $nbrDr = $this->showCountTableWhere("users", "role_id", 4);
-        $nbrMalade = $this->showCountTableWhere("users", "role_id", 3);
-        $nbrAssDr = $this->showCountTableWhere("users", "role_id", 2);
+        $nbrformateur = $this->showCountTableWhere("users", "role_id", 4);
+        $nbrApprenant = $this->showCountTableWhere("users", "role_id", 3);
+        $nbrAdmin = $this->showCountTableWhere("users", "role_id", 1);
 
         return view('dashbord',  [
-            'nbrDr'         =>  $nbrDr,
-            'nbrMalade'     =>  $nbrMalade,
-            'nbrAssDr'      =>  $nbrAssDr,
+            'nbrformateur'      =>  $nbrformateur,
+            'nbrApprenant'      =>  $nbrApprenant,
+            'nbrAdmin'          =>  $nbrAdmin,
         ]);
 
     }
@@ -101,16 +101,16 @@ class NotificationController extends Controller
     function pdf_list($role_id)
     {
          $message = "";
-         if ($role_id == 2) {
+         if ($role_id == 3) {
              // code...
-            $message = "ASSISTANTS DOCTEURS";
+            $message = "APPRENANTS";
          }
-         elseif ($role_id == 3) {
-            $message = "MALADES";
+         elseif ($role_id == 4) {
+            $message = "FORMATEURS";
          }
 
-         elseif ($role_id == 4) {
-            $message = "DOCTEURS";
+         elseif ($role_id == 1) {
+            $message = "ADMINISTRATEURS DU SYSTEME";
          }
 
          else {
@@ -124,7 +124,7 @@ class NotificationController extends Controller
         $output='';
         $output.='
         <div style="border:1px solid black;padding:0px;">
-         <h3 align="center" style="color:blue;">REPUBLIQUE DEMOCRATIQUE DU CONGO <br/> CONSULTATION EN LIGNE <br/> <span style="text-decoration:underline;">APP CONSULTATION </span></h3>
+         <h3 align="center" style="color:blue;">REPUBLIQUE DEMOCRATIQUE DU CONGO <br/> FORMATION EN LIGNE <br/> <span style="text-decoration:underline;">CRYPTNAIL-ACADEMY </span></h3>
         
            <div align="center"> LA LISTE ENTIERE DES   '.$message.' 
             
@@ -203,6 +203,62 @@ class NotificationController extends Controller
         $f=file_get_contents($logo);
         $pic='data:image/png;base64,'.base64_encode($f);
         return $pic;
+    }
+
+
+    function getCourse()
+    {
+
+        $data = DB::table("cours")
+        ->join('users', 'users.id', '=', 'cours.user_id')
+        ->select("cours.id","cours.user_id","cours.nonCours","cours.description","cours.image",
+            "cours.file","cours.prerequis","cours.objectif","cours.nbrHeure",
+            "cours.date_debit", "cours.date_fin", "cours.etat",
+            "users.name","users.email","users.avatar",
+        )
+        ->paginate(4);
+
+        return view('Cours',  ['data' => $data]);
+
+    }
+
+     function getSigleCourse($id)
+    {
+
+        $data = DB::table("cours")
+        ->join('users', 'users.id', '=', 'cours.user_id')
+        ->select("cours.id","cours.user_id","cours.nonCours","cours.description","cours.image",
+            "cours.file","cours.prerequis","cours.objectif","cours.nbrHeure",
+            "cours.date_debit", "cours.date_fin", "cours.etat",
+            "users.name","users.email","users.avatar",
+        )
+        ->where('cours.id', $id)
+        ->get();
+
+        return view('SigleCours',  ['data' => $data]);
+
+    }
+
+    public function searchCourse()
+    {
+        request()->validate([
+            'q' => 'required|min:2'
+        ]);
+
+        $q = request()->input('q');
+
+        $data = DB::table("cours")
+        ->join('users', 'users.id', '=', 'cours.user_id')
+        ->select("cours.id","cours.user_id","cours.nonCours","cours.description","cours.image",
+            "cours.file","cours.prerequis","cours.objectif","cours.nbrHeure",
+            "cours.date_debit", "cours.date_fin", "cours.etat",
+            "users.name","users.email","users.avatar",
+        )
+        ->where('cours.nonCours', 'like', "%$q%")
+        ->orWhere('cours.description', 'like', "%$q%")
+        ->paginate(4);
+
+        return view('searchCours')->with('data', $data);
     }
 
 
